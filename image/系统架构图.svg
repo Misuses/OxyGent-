@@ -1,0 +1,100 @@
+<svg width="1000" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- 1. 顶层：用户需求输入 -->
+  <rect x="200" y="30" width="500" height="40" rx="6" fill="#F0F7FF" stroke="#409EFF" stroke-width="2"/>
+  <text x="450" y="55" font-family="Arial, 微软雅黑" font-size="14" text-anchor="middle" fill="#333">
+    用户需求输入（商品属性比对/评论分析等复杂检索需求）
+  </text>
+
+  <!-- 2. 第二层：任务解析层 -->
+  <line x1="450" y1="70" x2="450" y2="90" stroke="#409EFF" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <rect x="150" y="90" width="600" height="50" rx="6" fill="#E6F4FF" stroke="#409EFF" stroke-width="2"/>
+  <rect x="170" y="100" width="180" height="30" rx="4" fill="#409EFF"/>
+  <text x="260" y="120" font-family="Arial, 微软雅黑" font-size="12" text-anchor="middle" fill="white">
+    Task Planner Agent（增强版）
+  </text>
+  <text x="500" y="110" font-family="Arial, 微软雅黑" font-size="10" text-anchor="middle" fill="#333">
+    解析需求→生成任务流→匹配赛事三级任务（基础/进阶/复杂）
+  </text>
+
+  <!-- 3. 第三层：信息采集层 -->
+  <line x1="450" y1="140" x2="450" y2="160" stroke="#20C997" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <rect x="150" y="160" width="600" height="50" rx="6" fill="#E6FFFB" stroke="#20C997" stroke-width="2"/>
+  <rect x="170" y="170" width="180" height="30" rx="4" fill="#20C997"/>
+  <text x="260" y="190" font-family="Arial, 微软雅黑" font-size="12" text-anchor="middle" fill="white">
+    Web Navigation Agent
+  </text>
+  <text x="500" y="180" font-family="Arial, 微软雅黑" font-size="10" text-anchor="middle" fill="#333">
+    Playwright自动化→抓取商品页/评论页→处理动态加载（如“加载更多”）
+  </text>
+
+  <!-- 4. 第四层：信息抽取层 -->
+  <line x1="450" y1="210" x2="450" y2="230" stroke="#FF9F43" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <rect x="150" y="230" width="600" height="50" rx="6" fill="#FFF7E6" stroke="#FF9F43" stroke-width="2"/>
+  <rect x="170" y="240" width="180" height="30" rx="4" fill="#FF9F43"/>
+  <text x="260" y="260" font-family="Arial, 微软雅黑" font-size="12" text-anchor="middle" fill="white">
+    Information Extraction Agent
+  </text>
+  <text x="500" y="250" font-family="Arial, 微软雅黑" font-size="10" text-anchor="middle" fill="#333">
+    LLM+规则引擎→提取属性/情感/主题→适配公开/私有测试集
+  </text>
+
+  <!-- 5. 第五层：数据融合层 -->
+  <line x1="450" y1="280" x2="450" y2="300" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <rect x="150" y="300" width="600" height="50" rx="6" fill="#F0F2F5" stroke="#6B7280" stroke-width="2"/>
+  <rect x="170" y="310" width="180" height="30" rx="4" fill="#6B7280"/>
+  <text x="260" y="330" font-family="Arial, 微软雅黑" font-size="12" text-anchor="middle" fill="white">
+    Data Integration Agent
+  </text>
+  <text x="500" y="320" font-family="Arial, 微软雅黑" font-size="10" text-anchor="middle" fill="#333">
+    实体对齐→知识图谱更新（商品-属性-评论）→噪声过滤
+  </text>
+
+  <!-- 6. 第六层：结果生成层 -->
+  <line x1="450" y1="350" x2="450" y2="370" stroke="#9D4EDD" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <rect x="150" y="370" width="600" height="50" rx="6" fill="#F9E6FF" stroke="#9D4EDD" stroke-width="2"/>
+  <rect x="170" y="380" width="180" height="30" rx="4" fill="#9D4EDD"/>
+  <text x="260" y="400" font-family="Arial, 微软雅黑" font-size="12" text-anchor="middle" fill="white">
+    Answer Generation Agent
+  </text>
+  <text x="500" y="390" font-family="Arial, 微软雅黑" font-size="10" text-anchor="middle" fill="#333">
+    生成结构化结果（对比表/分析报告）→附加数据来源+置信度
+  </text>
+
+  <!-- 7. 赛事适配层（横向辅助层，调整位置确保显示） -->
+  <rect x="820" y="160" width="160" height="260" rx="6" fill="#F8F9FA" stroke="#ADB5BD" stroke-width="2"/>
+  <text x="900" y="200" font-family="Arial, 微软雅黑" font-size="12" text-anchor="middle" fill="#333" font-weight="bold">
+    赛事适配层
+  </text>
+  <text x="900" y="230" font-family="Arial, 微软雅黑" font-size="10" text-anchor="middle" fill="#333">
+    1. 分级任务调度
+  </text>
+  <text x="900" y="260" font-family="Arial, 微软雅黑" font-size="10" text-anchor="middle" fill="#333">
+    2. 泛化性优化（域自适应）
+  </text>
+  <text x="900" y="290" font-family="Arial, 微软雅黑" font-size="10" text-anchor="middle" fill="#333">
+    3. 评测指标监控
+  </text>
+  <text x="900" y="320" font-family="Arial, 微软雅黑" font-size="10" text-anchor="middle" fill="#333">
+    （Recall@k/响应时间）
+  </text>
+  <!-- 赛事适配层连接线（虚线，同步调整位置） -->
+  <line x1="820" y1="185" x2="800" y2="185" stroke="#ADB5BD" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <line x1="820" y1="235" x2="800" y2="235" stroke="#ADB5BD" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <line x1="820" y1="285" x2="800" y2="285" stroke="#ADB5BD" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <line x1="820" y1="335" x2="800" y2="335" stroke="#ADB5BD" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <line x1="820" y1="385" x2="800" y2="385" stroke="#ADB5BD" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+
+  <!-- 8. 底层：输出结果 -->
+  <line x1="450" y1="420" x2="450" y2="440" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <rect x="200" y="440" width="500" height="40" rx="6" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2"/>
+  <text x="450" y="465" font-family="Arial, 微软雅黑" font-size="14" text-anchor="middle" fill="#333">
+    输出结果（可溯源的属性对比表/评论分析报告）
+  </text>
+
+  <!-- 箭头标记定义 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

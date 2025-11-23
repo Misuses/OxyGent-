@@ -47,13 +47,13 @@ Master Agent 负责任务分类、工具调用顺序规划与最终推理结果�
 使用 Sentence-BERT / GTE / BGE 等模型生成向量表示：
 
 [
-E(q), \quad E(d)
+$$E(q), \quad E(d)$$
 ]
 
 通过余弦相似度进行检索：
 
 [
-Score_{\text{dense}}(q,d)=\cos(E(q),E(d))
+$$Score_{\text{dense}}(q,d)=\cos(E(q),E(d))$$
 ]
 
 适用于：
@@ -71,7 +71,7 @@ Score_{\text{dense}}(q,d)=\cos(E(q),E(d))
 BM25 得分为：
 
 [
-Score_{\text{sparse}}(q,d)=\sum_{t\in q}IDF(t)\cdot\frac{tf(t,d)(k+1)}{tf(t,d)+k(1-b+b\frac{|d|}{avg_d})}
+$$Score_{\text{sparse}}(q,d)=\sum_{t\in q}IDF(t)\cdot\frac{tf(t,d)(k+1)}{tf(t,d)+k(1-b+b\frac{|d|}{avg_d})}$$
 ]
 
 适用于：
@@ -129,10 +129,10 @@ Hybrid RAG 的关键挑战在于：**不同查询对 Dense 与 Sparse 的依赖�
 
 ## **3.3.1 查询具体性评分**
 
-给定查询 ( Q = {q_i} )，TF-IDF 基于整个知识库计算。
+$$给定查询 ( Q = {q_i} )，TF-IDF 基于整个知识库计算。$$
 
 [
-Score_{\text{spec}}=\frac{\sum_{i=1}^{|Q|}TFIDF(q_i)}{|Q|}
+$$Score_{\text{spec}}=\frac{\sum_{i=1}^{|Q|}TFIDF(q_i)}{|Q|}$$
 ]
 
 意义：
@@ -149,10 +149,10 @@ Score_{\text{spec}}=\frac{\sum_{i=1}^{|Q|}TFIDF(q_i)}{|Q|}
 通过 sigmoid 平滑动态调整权重：
 
 [
-w_{\text{sparse}}=\sigma(Score_{\text{spec}})
+$$w_{\text{sparse}}=\sigma(Score_{\text{spec}})$$
 ]
 [
-w_{\text{dense}}=1 - w_{\text{sparse}}
+$$w_{\text{dense}}=1 - w_{\text{sparse}}$$
 ]
 
 保证：
@@ -167,10 +167,11 @@ w_{\text{dense}}=1 - w_{\text{sparse}}
 最终得分融合公式：
 
 [
-RRF_{\text{score}}(d)=
+$$RRF_{\text{score}}(d)=
 \frac{w_{\text{dense}}}{k+r_{\text{dense}}(d)}
 +
 \frac{w_{\text{sparse}}}{k+r_{\text{sparse}}(d)}
+$$
 ]
 
 其中：
